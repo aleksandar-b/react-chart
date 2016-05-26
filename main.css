@@ -72,7 +72,7 @@ li{
   transform:translate(50px);
   overflow:hidden;
   width:500px;
-  
+  clip-path: url(#clipPath4);
 }
 .blue{
    stroke-width:2px;
