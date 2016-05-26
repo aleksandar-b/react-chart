@@ -1,0 +1,97 @@
+
+.line{
+  
+  stroke:rgb(0,0,0);
+  stroke-width:1;
+  stroke-dashArray: 10 10;
+  shape-rendering:crispEdges;
+}
+.axes{
+  
+  stroke:rgb(0,0,0);
+  stroke-width:2;
+
+  shape-rendering:"crispEdges";
+}
+.wrapper{
+  width:770px;
+  height:570px;
+  
+  
+}
+svg{
+  
+  margin:20px 20px 20px 0;
+  position:relative;
+  top:0px;
+}
+
+input[type=range] {
+
+    
+    width: 250px;
+    
+}
+
+.inputWrap {
+ width:550px;
+  text-align:right;
+position:relative;
+top:-100px;
+  left:0px;
+  padding-top:100px;
+}
+
+.inputWrap:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ul{
+  
+
+}
+li{
+  display:inline-block;
+}
+
+.range{
+  
+}
+.translate{
+  transform:translate(50px);
+  overflow:hidden;
+  width:500px;
+  
+}
+.blue{
+   stroke-width:2px;
+  stroke:#91B0DA;
+  fill:#91B0DA;
+  opacity:0.9;
+}
+
+.gray{
+  stroke-width:2px;
+  stroke:gray;
+  fill:none;
+  
+}
+.atom{
+  
+    position:relative;
+  top:-152px;
+  left:53px;
+}
+.atom1{
+  background:#91B0DA;
+  width:12px;
+  height:12px;
+  display:inline-block;
+  border-radius:20px;
+  position:relative;
+  top:-150px;
+  left:50px;
+}
+
