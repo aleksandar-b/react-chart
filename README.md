@@ -1,6 +1,6 @@
 # react-chart
 
--Scatter plot with React and pure Svg using React's virtual dom to calculate difference on drag
+-Scatter plot with React and pure Svg using virtual dom to calculate difference on drag
 
 -Draggable line
 
