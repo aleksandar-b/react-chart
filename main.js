@@ -1,3 +1,4 @@
+var drag = false;
 
 // Config
 var arr = [];
@@ -82,14 +83,34 @@ var Chart = React.createClass({
     },
   
   componentDidMount:function(){
-    var that = this;
+   
+    var svg = document.getElementsByTagName('svg')[0];
+
+
+svg.onmousedown = function(){
+
+drag = true;
+
+    }
+
+    svg.onmouseup = function(){
+
+drag = false;
+      
+    }
+
+
+
+ var that = this;
     var line = document.getElementsByClassName('line')[0];
     var range = document.getElementsByClassName('range')[0];
     var posX1 = line.getAttribute('x1');
-    document.getElementsByTagName('svg')[0].onmousemove = function(event){
+        svg.onmousemove = function(event){
+if(drag ){
+
       var cX = event.clientX;
      var frame = 0;
-      var fin = cX-posX1-50;
+      var fin = cX-posX1-57;
       var t = arr.filter(function(val){
 
      return fin+250 > val.x;
@@ -107,9 +128,10 @@ requestAnimationFrame(that.scheduleFrame(fin,t));
         batch = false;
       }
       */
-      
+      }
     }
-    
+
+        
   },
   scheduleFrame:function(fin,t){
     var that = this;
@@ -131,17 +153,22 @@ requestAnimationFrame(that.scheduleFrame(fin,t));
     },this);
     
     return <div className="wrapper"> <svg width="760" height="570"
-                   xmlns="http://www.w3.org/2000/svg"><Broj content="1" y="12" x="10"/><Broj content="0" y="505" x="10"/><Broj content="0" y="550" x="45"/><Broj content="0.5" y="550" x="290"/><Broj content="1" y="550" x="553"/><g className="translate"><Xaxes /><Yaxes /><Line x={this.state.line}/>{circles}</g></svg><br/><div className="inputWrap">
+                   xmlns="http://www.w3.org/2000/svg"><defs>
+    <clipPath id="clipPath4">
+        <rect x="-1" y="0" width="550" height="501" />
+
+    </clipPath>
+</defs><Broj content="1" y="12" x="10"/><Broj content="0" y="505" x="10"/><Broj content="0" y="550" x="45"/><Broj content="0.5" y="550" x="290"/><Broj content="1" y="550" x="553"/><g className="translate"><Line x={this.state.line}/>{circles}<Xaxes /><Yaxes /></g></svg><br/><div className="inputWrap">
 <input className="range" type="range" id="weight" min="0" value={counter===1 ?this.state.line/5:this.state.line} list="ticks" max="500" step="1" onInput={this.handleOnChange.bind(this)}
                         onChange={this.handleOnChange.bind(this)}/>
       
       <datalist id="ticks">
-	<option>50</option>
-	<option>100</option>
-	<option>150</option>
-	<option>200</option>
-	<option>250</option>
-	<option>300</option>
+  <option>50</option>
+  <option>100</option>
+  <option>150</option>
+  <option>200</option>
+  <option>250</option>
+  <option>300</option>
   <option>350</option>
   <option>400</option>
   <option>450</option>
@@ -173,3 +200,4 @@ ReactDOM.render(
   <Chart />,
   document.getElementById('container')
 );
+
