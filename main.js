@@ -1,5 +1,4 @@
 
-
 // Config
 var arr = [];
 for(var i = 0; i<100; i++){
@@ -87,7 +86,7 @@ var Chart = React.createClass({
     var line = document.getElementsByClassName('line')[0];
     var range = document.getElementsByClassName('range')[0];
     var posX1 = line.getAttribute('x1');
-    document.getElementsByTagName('svg')[0].onmousemove = function(e){
+    document.getElementsByTagName('svg')[0].onmousemove = function(event){
       var cX = event.clientX;
      var frame = 0;
       var fin = cX-posX1-50;
