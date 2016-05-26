@@ -42,7 +42,7 @@ var Icon = function(props){
 
 var Circle  = function(props){
 
-  return <g><circle className={props.x > props.line ? "blue": "gray"} cx={props.x} cy={props.y} r="6" /></g>;
+  return <g><circle style={{animationDelay:props.ind+"ms"}} className={props.x > props.line ? "blue": "gray"} cx={props.x} cy={props.y} r="6" /></g>;
     
 }
 
@@ -148,7 +148,7 @@ requestAnimationFrame(that.scheduleFrame(fin,t));
      counter++;
     var circles =  arr.map(function(val, ind){
     
-    return <Circle line={this.state.line} x={val.x} y={val.y} key={ind}/>
+    return <Circle line={this.state.line} x={val.x} y={val.y} ind ={ind} key={ind}/>
     
     },this);
     
